@@ -5,7 +5,7 @@
   tasks:
   - name: upgrade packgs
     apt: name=* state=latest update_cache=yes
-  - name: install httpd
+  - name: install apache2
     apt: name=httpd state=present
   - name: start httpd
     service: name=httpd state=started
