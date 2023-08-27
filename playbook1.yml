@@ -3,6 +3,8 @@
   become: true
   become_user: root
   tasks:
+  - name: upgrade packgs
+    apt: name=* state=latest update_cache=yes
   - name: install httpd
     apt: name=httpd state=present
   - name: start httpd
