@@ -4,14 +4,14 @@
   become_user: root
   tasks:
   - name: install tomcat
-    apt: name=tomcat state=present
-  - name: start tomcat
-    service: name=tomcat state=started
+    apt: name=tomcat9 state=present
+  - name: start tomcat9
+    service: name=tomcat9 state=started
   - name: deploy war file
     get_url:
      url=https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
-     dest=/usr/share/tomcat/webapps
-    notify: restart tomcat
+     dest=/usr/share/tomcat9/webapps
+    notify: restart tomcat9
   handlers:
-   - name: restart tomcat
-     service: name=tomcat state=restarted
+   - name: restart tomcat9
+     service: name=tomcat9 state=restarted
