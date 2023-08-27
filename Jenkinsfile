@@ -13,7 +13,7 @@ pipeline{
          stage("excute the job")
          {
              steps{
-                 ansiblePlaybook credentialsId: 'ansiuser1', disableHostKeyChecking: true, installation: 'myansible', inventory: 'dev.inv', playbook: 'playbook1.yml'
+                 ansiblePlaybook credentialsId: 'ansiuser1', disableHostKeyChecking: true, installation: 'myansible', inventory: 'dev.inv', playbook: 'playbook3.yml'
              }
          }
      }
