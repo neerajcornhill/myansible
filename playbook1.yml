@@ -6,12 +6,12 @@
   - name: upgrade packgs
     apt: name=* state=latest update_cache=yes
   - name: install apache2
-    apt: name=httpd state=present
-  - name: start httpd
-    service: name=httpd state=started
+    apt: name=apache2 state=present
+  - name: start apache2
+    service: name=apache2 state=started
   - name: deploy html file
     copy: src=demohttpd.html dest=/var/www/html
-    notify: restart httpd
+    notify: restart apache2
   handlers:
-  - name: restart httpd
-    service: name=httpd state=restarted
+  - name: restart apache2
+    service: name=apache2 state=restarted
